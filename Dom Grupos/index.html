@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Exercício</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Grupos</h1>
+        <form action="#" id="groupForm">
+            <label for="groupName">Nome do Grupo:</label>
+            <input type="text" name="groupName" id="groupName" required>
+
+            <label for="groupLeader">Líder:</label>
+            <input type="text" name="groupLeader" id="groupLeader">
+            
+            <label for="groupMembers">Membros:</label>
+            <input type="text" name="groupMembers" id="groupMembers" >
+            
+            <input type="hidden" name="groupRow" id="groupRow">
+            <button id="groupSave" type="submit">Cadastrar Grupo</button>
+        </form>
+
+        <h2>Grupos cadastrados</h2>
+        <table id="groupTable">
+            <tr>
+                <th>Nome do Grupo</th>
+                <th>Líder</th>
+                <th>Membros</th>
+                <th>Ações</th>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

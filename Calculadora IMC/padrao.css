@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 20px;
+    background-color: #4a90e2;
+    text-align: center;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Helvetica', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background-color: #333333;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - 120px); /* Altura ajustada para compensar header e footer */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; /* Espaço para o header fixo */
+}
+
+main input {
+    width: 250px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+main label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+main span {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #4a90e2;
+}
+
+main p {
+    margin: 0 0 20px 0;
+}
+
+.calculadora {
+    background-color: #f7f7f7;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+}

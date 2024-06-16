@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="text">
+            <p style="font-size: 24px;">Calculadora INSS/IR</p>
+            <p>Salario Bruto</p>
+            <p><input type="number" id="renda" min="0"></p>
+            <p>Dependentes</p>
+            <p><input type="number" id="dependente" min="0"></p>
+            <button onclick="renda()">Calcular</button>
+            <p>Valor INSS</p>
+            <p><output id="inss"></output></p>
+            <p>Valor Imposto de renda</p>
+            <p><output id="ir"></output></p>
+            <p>Salario Liquido</p>
+            <p><output id="liquido"></output></p>
+        </div>
+    </div>
+</body>
+<script src="inss.js"></script>
+</html>

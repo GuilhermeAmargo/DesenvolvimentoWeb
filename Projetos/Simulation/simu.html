@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Código</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            height: fit-content;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .elemento {
+            overflow: hidden; 
+        }
+
+        .elemento::-webkit-scrollbar {
+            display: none; 
+        }
+
+
+        .editors {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            height: 600px;
+        }
+
+        .editor, .result {
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result {
+            height: 400px;
+        }
+
+        .editor textarea {
+            flex-grow: 1;
+            border: none;
+            resize: none;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: monospace;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="editors">
+        <div class="editor">
+            <h3>HTML</h3>
+            <textarea id="htmlEditor"></textarea>
+        </div>
+        <div class="editor">
+            <h3>CSS</h3>
+            <textarea id="cssEditor"></textarea>
+        </div>
+        <div class="editor">
+            <h3>JavaScript</h3>
+            <textarea id="jsEditor"></textarea>
+        </div>
+    </div>
+    <div class="result">
+        <h3>Resultado Final</h3>
+        <iframe id="resultFrame"></iframe>
+    </div>
+
+    <script>
+        const htmlEditor = document.getElementById('htmlEditor');
+        const cssEditor = document.getElementById('cssEditor');
+        const jsEditor = document.getElementById('jsEditor');
+        const resultFrame = document.getElementById('resultFrame');
+
+        function updateResult() {
+            const htmlContent = htmlEditor.value;
+            const cssContent = `<style>${cssEditor.value}</style>`;
+            const jsContent = `<script>${jsEditor.value}<\/script>`;
+            const combinedContent = `
+                <html>
+                <head>${cssContent}</head>
+                <body>${htmlContent}${jsContent}</body>
+                </html>
+            `;
+            resultFrame.srcdoc = combinedContent;
+        }
+
+        htmlEditor.addEventListener('input', updateResult);
+        cssEditor.addEventListener('input', updateResult);
+        jsEditor.addEventListener('input', updateResult);
+
+        updateResult();
+    </script>
+</body>
+</html>

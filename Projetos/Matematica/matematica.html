@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Calculator</title>
+
+    <style>
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f1f2f6;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 15px 30px;
+            background-color: #2ecc71;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #27ae60;
+        }
+
+        .text {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid #34495e;
+            background-color: #ecf0f1;
+            text-align: center;
+            position: relative;
+        }
+
+        input[type="text"] {
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            outline: none;
+            text-align: right;
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        output {
+            font-size: 14px;
+            font-weight: bold;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table id="calcu">
+        <tr>
+            <td colspan="3">
+                <div class="text">
+                    <output id="historico"></output>
+                    <input type="text" id="result">
+                </div>
+            </td>
+            <td><input type="button" value="C" onclick="clearResult()"></td>
+            <td><input type="button" value="Ins" onclick="insert()"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="appendToResult('1')"></td>
+            <td><input type="button" value="2" onclick="appendToResult('2')"></td>
+            <td><input type="button" value="3" onclick="appendToResult('3')"></td>
+            <td><input type="button" value="/" onclick="appendToResult('/')"></td>
+            <td>
+                <label><input type="radio" checked="checked" id="infixa" name="mode"/>Infixa</label>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="appendToResult('4')"></td>
+            <td><input type="button" value="5" onclick="appendToResult('5')"></td>
+            <td><input type="button" value="6" onclick="appendToResult('6')"></td>
+            <td><input type="button" value="*" onclick="appendToResult('*')"></td>
+            <td>
+                <label><input type="radio" id="posfixa" name="mode"/>Posfixa</label>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="appendToResult('7')"></td>
+            <td><input type="button" value="8" onclick="appendToResult('8')"></td>
+            <td><input type="button" value="9" onclick="appendToResult('9')"></td>
+            <td><input type="button" value="-" onclick="appendToResult('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="appendToResult('0')"></td>
+            <td><input type="button" value="." onclick="appendToResult('.')"></td>
+            <td><input type="button" value="=" onclick="calculateResult('=')"></td>
+            <td><input type="button" value="+" onclick="appendToResult('+')"></td>
+        </tr>
+    </table>
+
+</body>
+<script src="script.js"></script>
+</html>
